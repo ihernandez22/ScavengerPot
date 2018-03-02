@@ -1,0 +1,22 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: ScavengerPot
+  password: password
+  host: localhost
+
+development:
+  <<: *default
+  database: ScavengerPot_development
+
+test:
+  <<: *default
+  database: ScavengerPot_test
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: ScavengerPot_production
+  username: ScavengerPot
+  password: <%= ENV['SCAVENGERPOT_DATABASE_PASSWORD'] %>
