@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ScavengerPot</title>
+    <title>Scavenger Pot</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <%= javascript_include_tag 'application' %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+    <![endif]-->
   </head>
 
   <body>
-    <%= yield %>
+    <nav id="site_header" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <h3><%= link_to "Scavenger Pot", root_path %></h3>
+        <button id="hamburger_button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my_nav_bar">
+          <% 3.times do |n| %>
+            <span class="icon-bar"></span>
+          <% end %>
+        </button>
+        <div id="my_nav_bar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="menu_element"><%= link_to "HOME", root_path %></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="page_contents" class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

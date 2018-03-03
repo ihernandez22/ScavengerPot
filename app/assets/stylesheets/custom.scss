@@ -1,2 +1,74 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+$primary_color: #ff4f00;
+$secondary_color: black;
+$tertiary_color: #d6d6d6;
+$text_color: black;
+
+#site_header {
+  background: white;
+  border-bottom: 3px solid $secondary_color;
+  outline: 1px solid $primary_color;
+  .container {
+    position: relative;
+  }
+  h3 {
+    display: inline-block;
+    color: $primary_color;
+    a {
+      color: $primary_color;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+.container .navbar-header {
+  margin: 0;
+  float: right;
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  #my_nav_bar {
+    position: absolute;
+    top: 15px;
+    right: 0px;
+  }
+  .menu_element {
+    a:hover {
+      color: $primary_color;
+      text-decoration: none;
+      background-color: white;
+    }
+  }
+}
+#my_nav_bar {
+  .menu_element {
+    a {
+      font-weight: bold;
+      color: $primary_color;
+      text-decoration: none;
+    }
+  }
+  border-color: $secondary_color;
+}
+#hamburger_button {
+  border-color: $primary_color;
+  background-color: $primary_color;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  margin: 10px;
+  padding: 5px;
+  &.collapsed {
+    background-color: white;
+    .icon-bar {
+      background-color: $primary_color;
+    }
+  }
+}
+#page_contents {
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
